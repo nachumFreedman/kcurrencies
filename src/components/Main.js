@@ -1,15 +1,21 @@
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import pic01 from '../images/pic01.jpg'
 import pic02 from '../images/pic02.jpg'
 import pic03 from '../images/pic03.jpg'
 
 import emailjs from 'emailjs-com';
 
+import { initCoinMarketCap } from "../network/coinMarketCap";
+
 const Main = props => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    initCoinMarketCap();
+  }, [])
 
   const handleSubmit = (e) => {
     e.preventDefault()

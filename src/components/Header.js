@@ -4,7 +4,9 @@ import logo from "../images/kcurrencieslogo.png"
 
 const Header = props => (
   <>
-    <img src={logo} style={{ width: "300px", height: "auto", position: "fixed", left: 20 }} />
+    <img src={logo} alt="logo" style={{
+      width: "300px", height: "auto", position: "absolute", left: 20, boxShadow: ".1px .1px .3px .3px darkslategrey"
+    }} />
     <header id="header" style={props.timeout ? { display: 'none' } : {}}>
       <div className="logo">
         K.

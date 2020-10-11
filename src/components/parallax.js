@@ -2,23 +2,29 @@ import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
 
 let scollDownElement = "";
+let scrollYPos = "";
 
 const Parallax = props => {
 
     //test
-    let scrollYPos = window.scrollY;
+    if (typeof window !== undefined) {
+        scrollYPos = window.scrollY;
+    }
 
     useEffect(() => {
-
-        scollDownElement = document.querySelector('.scroll-down span')
+        if (typeof window !== undefined) {
+            scollDownElement = document.querySelector('.scroll-down span')
+        }
     }, [])
 
-    window.setInterval(() => {
-        scrollYPos = window.scrollY;
-        if (scrollYPos > 0 && scollDownElement) {
-            scollDownElement.classList.add('unvisible');
-        }
-    }, 20);
+    if (typeof window !== undefined) {
+        window.setInterval(() => {
+            scrollYPos = window.scrollY;
+            if (scrollYPos > 0 && scollDownElement) {
+                scollDownElement.classList.add('unvisible');
+            }
+        }, 20);
+    }
 
     const createScaleY = (x1, y1, x2, y2) => {
         const slope = (y2 - y1) / (x2 - x1);
