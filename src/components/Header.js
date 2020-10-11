@@ -1,64 +1,64 @@
 import PropTypes from 'prop-types'
 import React from 'react'
+import logo from "../images/kcurrencieslogo.png"
 
 const Header = props => (
-  <header id="header" style={props.timeout ? { display: 'none' } : {}}>
-    <div className="logo">
-      <span className="icon fa-diamond"></span>
+  <>
+    <img src={logo} style={{ width: "300px", height: "auto", position: "fixed", left: 20 }} />
+    <header id="header" style={props.timeout ? { display: 'none' } : {}}>
+      <div className="logo">
+        K.
     </div>
-    <div className="content">
-      <div className="inner">
-        <h1>Dimension</h1>
-        <p>
-          A fully responsive site template designed by{' '}
-          <a href="https://html5up.net">HTML5 UP</a> and released
-          <br />
-          for free under the{' '}
-          <a href="https://html5up.net/license">Creative Commons</a> license.
+      <div className="content">
+        <div className="inner">
+          <p>
+            Realize your potential.
+            The best way to keep your currencies kosher.<br /> Decentralized finance at your fingertips.
         </p>
+        </div>
       </div>
-    </div>
-    <nav>
-      <ul>
-        <li>
-          <button
-            onClick={() => {
-              props.onOpenArticle('intro')
-            }}
-          >
-            Intro
+      <nav>
+        <ul>
+          <li>
+            <button
+              onClick={() => {
+                props.onOpenArticle('intro')
+              }}
+            >
+              Intro
           </button>
-        </li>
-        <li>
-          <button
-            onClick={() => {
-              props.onOpenArticle('work')
-            }}
-          >
-            Work
+          </li>
+          <li>
+            <button
+              onClick={() => {
+                props.onOpenArticle('work')
+              }}
+            >
+              Work
           </button>
-        </li>
-        <li>
-          <button
-            onClick={() => {
-              props.onOpenArticle('about')
-            }}
-          >
-            About
+          </li>
+          <li>
+            <button
+              onClick={() => {
+                props.onOpenArticle('about')
+              }}
+            >
+              About
           </button>
-        </li>
-        <li>
-          <button
-            onClick={() => {
-              props.onOpenArticle('contact')
-            }}
-          >
-            Contact
+          </li>
+          <li>
+            <button
+              onClick={() => {
+                props.onOpenArticle('contact')
+              }}
+            >
+              Contact
           </button>
-        </li>
-      </ul>
-    </nav>
-  </header>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  </>
 )
 
 Header.propTypes = {

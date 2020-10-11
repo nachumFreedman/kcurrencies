@@ -63,13 +63,17 @@
   }
 
   .logo {
-    width: 5.5rem;
-    height: 5.5rem;
-    line-height: 5.5rem;
+    width: 8rem;
+    height: 8rem;
+    line-height: 6.5rem;
     border: solid _size(border-width) _palette(border);
     border-radius: 100%;
+    font-size: 8rem;
+    font-family: 'Acceleration & Reaction';
+    padding-right: 3%;
 
     .icon {
+
       &:before {
         font-size: 2rem;
       }
@@ -93,7 +97,7 @@
         )
       );
       @include vendor('transition-delay', '0.25s');
-      padding: 3rem 2rem;
+      padding: 2rem 2rem;
       max-height: 40rem;
       overflow: hidden;
 
@@ -221,12 +225,7 @@
       width: 4.75rem;
       height: 4.75rem;
       line-height: 4.75rem;
-
-      .icon {
-        &:before {
-          font-size: 1.75rem;
-        }
-      }
+      font-size: 8rem;
     }
 
     .content {
