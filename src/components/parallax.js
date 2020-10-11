@@ -7,17 +7,17 @@ let scrollYPos = "";
 const Parallax = props => {
 
     //test
-    if (typeof window !== undefined) {
+    if (typeof window !== 'undefined') {
         scrollYPos = window.scrollY;
     }
 
     useEffect(() => {
-        if (typeof window !== undefined) {
+        if (typeof document !== 'undefined') {
             scollDownElement = document.querySelector('.scroll-down span')
         }
     }, [])
 
-    if (typeof window !== undefined) {
+    if (typeof window !== 'undefined') {
         window.setInterval(() => {
             scrollYPos = window.scrollY;
             if (scrollYPos > 0 && scollDownElement) {
@@ -77,20 +77,27 @@ const Parallax = props => {
                 item.calculateElementStyle();
                 item.animateElement();
             });
-            requestAnimationFrame(play);
         }
 
         return {
             play
         }
     }
+    let floorElement = "";
+    let layer3Element = "";
+    let layer4Element = "";
+    let layer2Element = "";
+    let layer1Element = "";
+    let layer0Element = "";
 
-    const floorElement = document.querySelector('.floor');
-    const layer4Element = document.querySelector('.layer:nth-of-type(2)');
-    const layer3Element = document.querySelector('.layer:nth-of-type(3)');
-    const layer2Element = document.querySelector('.layer:nth-of-type(4)');
-    const layer1Element = document.querySelector('.layer:nth-of-type(5)');
-    const layer0Element = document.querySelector('.layer:nth-of-type(6)');
+    if (typeof document !== "undefined") {
+        floorElement = document.querySelector('.floor');
+        layer4Element = document.querySelector('.layer:nth-of-type(2)');
+        layer3Element = document.querySelector('.layer:nth-of-type(3)');
+        layer2Element = document.querySelector('.layer:nth-of-type(4)');
+        layer1Element = document.querySelector('.layer:nth-of-type(5)');
+        layer0Element = document.querySelector('.layer:nth-of-type(6)');
+    }
 
 
     const animation = parallaxElements([{
