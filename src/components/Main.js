@@ -6,7 +6,9 @@ import pic03 from '../images/pic03.jpg'
 
 import emailjs from 'emailjs-com';
 
-import { initCoinMarketCap } from "../network/coinMarketCap";
+import { InitCoinMarketCap } from "../network/coinMarketCap";
+
+
 
 const Main = props => {
   const [email, setEmail] = useState("");
@@ -14,8 +16,8 @@ const Main = props => {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    initCoinMarketCap();
-  }, [])
+    InitCoinMarketCap();
+  })
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -29,7 +31,7 @@ const Main = props => {
       .then(() => {
         props.onCloseArticle();
       })
-  };
+  }
 
   let close = (
     <div

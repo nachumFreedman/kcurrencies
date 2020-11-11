@@ -1,30 +1,34 @@
 import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
 
+import { InitCoinMarketCap } from "../network/coinMarketCap";
+
 let scollDownElement = "";
-let scrollYPos = "";
 
 const Parallax = props => {
 
     //test
-    if (typeof window !== 'undefined') {
-        scrollYPos = window.scrollY;
-    }
+    let scrollYPos = window.scrollY;
+
+    //this is how to make it react to mouse movements instead of scroll
+    // onmousemove = function (e) {
+    //     scrollYPos = e.clientY;
+    //     if (scrollYPos > 0 && scollDownElement) {
+    //         scollDownElement.classList.add('unvisible');
+    //     }
+    // }
 
     useEffect(() => {
-        if (typeof document !== 'undefined') {
-            scollDownElement = document.querySelector('.scroll-down span')
-        }
+        InitCoinMarketCap();
+        scollDownElement = document.querySelector('.scroll-down span')
     }, [])
 
-    if (typeof window !== 'undefined') {
-        window.setInterval(() => {
-            scrollYPos = window.scrollY;
-            if (scrollYPos > 0 && scollDownElement) {
-                scollDownElement.classList.add('unvisible');
-            }
-        }, 20);
-    }
+    window.setInterval(() => {
+        scrollYPos = window.scrollY;
+        if (scrollYPos > 0 && scollDownElement) {
+            scollDownElement.classList.add('unvisible');
+        }
+    }, 20);
 
     const createScaleY = (x1, y1, x2, y2) => {
         const slope = (y2 - y1) / (x2 - x1);
@@ -77,27 +81,20 @@ const Parallax = props => {
                 item.calculateElementStyle();
                 item.animateElement();
             });
+            requestAnimationFrame(play);
         }
 
         return {
             play
         }
     }
-    let floorElement = "";
-    let layer3Element = "";
-    let layer4Element = "";
-    let layer2Element = "";
-    let layer1Element = "";
-    let layer0Element = "";
 
-    if (typeof document !== "undefined") {
-        floorElement = document.querySelector('.floor');
-        layer4Element = document.querySelector('.layer:nth-of-type(2)');
-        layer3Element = document.querySelector('.layer:nth-of-type(3)');
-        layer2Element = document.querySelector('.layer:nth-of-type(4)');
-        layer1Element = document.querySelector('.layer:nth-of-type(5)');
-        layer0Element = document.querySelector('.layer:nth-of-type(6)');
-    }
+    const floorElement = document.querySelector('.floor');
+    const layer4Element = document.querySelector('.layer:nth-of-type(2)');
+    const layer3Element = document.querySelector('.layer:nth-of-type(3)');
+    const layer2Element = document.querySelector('.layer:nth-of-type(4)');
+    const layer1Element = document.querySelector('.layer:nth-of-type(5)');
+    const layer0Element = document.querySelector('.layer:nth-of-type(6)');
 
 
     const animation = parallaxElements([{
