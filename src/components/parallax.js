@@ -38,8 +38,7 @@ const Parallax = props => {
         layer2Element = document.querySelector('.layer:nth-of-type(4)');
         layer1Element = document.querySelector('.layer:nth-of-type(5)');
         layer0Element = document.querySelector('.layer:nth-of-type(6)');
-
-
+        animation.play();
     }, [])
 
     window.setInterval(() => {
@@ -133,9 +132,6 @@ const Parallax = props => {
         calScale: () => createScaleY(0, 0, -900, 914)
     }]);
 
-    useEffect(() => {
-        animation.play();
-    }, [])
 
 
 
