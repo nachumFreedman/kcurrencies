@@ -1,13 +1,14 @@
-import PropTypes from 'prop-types'
-import React, { useEffect } from 'react'
-import window from 'global'
-import document from 'global/document'
+import PropTypes from 'prop-types';
+import React, { useEffect } from 'react';
+import window from 'global';
+import document from 'global/document';
 
 import { InitCoinMarketCap } from "../network/coinMarketCap";
 
 let scollDownElement = "";
 
 const Parallax = props => {
+    if (!window && !document) return (<div></div>);
 
     //test
     let scrollYPos = window.scrollY;
@@ -140,7 +141,8 @@ const Parallax = props => {
                 <div className="parallax layer"></div>
                 <div className="parallax layer"></div>
             </div>
-        </>)
+        </>
+    )
 }
 
 Parallax.propTypes = {
