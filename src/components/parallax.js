@@ -100,7 +100,6 @@ const Parallax = props => {
                 item.calculateElementStyle();
                 item.animateElement();
             });
-            requestAnimationFrame(play);
         }
 
         return {
