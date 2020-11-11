@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
 import window from 'global'
+import document from 'global/document'
 
 import { InitCoinMarketCap } from "../network/coinMarketCap";
 
