@@ -8,7 +8,7 @@ import { InitCoinMarketCap } from "../network/coinMarketCap";
 let scollDownElement = "";
 
 const Parallax = props => {
-    if (!window && !document) return (<div></div>);
+    if (!window || !document) return (<div></div>);
 
     //test
     let scrollYPos = window.scrollY;
