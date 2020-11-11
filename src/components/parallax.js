@@ -7,14 +7,6 @@ import { InitCoinMarketCap } from "../network/coinMarketCap";
 
 let scollDownElement = "";
 
-let floorElement;
-let layer4Element;
-let layer3Element;
-let layer2Element;
-let layer1Element;
-let layer0Element;
-
-
 const Parallax = props => {
     //test
     let scrollYPos = window.scrollY;
@@ -29,16 +21,7 @@ const Parallax = props => {
 
     useEffect(() => {
         InitCoinMarketCap();
-        scollDownElement = document.querySelector('.scroll-down span');
-
-
-        floorElement = document.querySelector('.floor');
-        layer4Element = document.querySelector('.layer:nth-of-type(2)');
-        layer3Element = document.querySelector('.layer:nth-of-type(3)');
-        layer2Element = document.querySelector('.layer:nth-of-type(4)');
-        layer1Element = document.querySelector('.layer:nth-of-type(5)');
-        layer0Element = document.querySelector('.layer:nth-of-type(6)');
-        animation.play();
+        scollDownElement = document.querySelector('.scroll-down span')
     }, [])
 
     window.setInterval(() => {
@@ -99,12 +82,29 @@ const Parallax = props => {
                 item.calculateElementStyle();
                 item.animateElement();
             });
+            requestAnimationFrame(play);
         }
 
         return {
             play
         }
+    };
+
+    let floorElement;
+    let layer4Element;
+    let layer3Element;
+    let layer2Element;
+    let layer1Element;
+    let layer0Element;
+    if (document) {
+        floorElement = document.querySelector('.floor');
+        layer4Element = document.querySelector('.layer:nth-of-type(2)');
+        layer3Element = document.querySelector('.layer:nth-of-type(3)');
+        layer2Element = document.querySelector('.layer:nth-of-type(4)');
+        layer1Element = document.querySelector('.layer:nth-of-type(5)');
+        layer0Element = document.querySelector('.layer:nth-of-type(6)');
     }
+
 
     const animation = parallaxElements([{
         element: floorElement,
@@ -132,6 +132,7 @@ const Parallax = props => {
         calScale: () => createScaleY(0, 0, -900, 914)
     }]);
 
+    animation.play();
 
 
 
