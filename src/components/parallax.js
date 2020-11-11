@@ -7,9 +7,15 @@ import { InitCoinMarketCap } from "../network/coinMarketCap";
 
 let scollDownElement = "";
 
-const Parallax = props => {
-    if (!window || !document) return (<div></div>);
+let floorElement;
+let layer4Element;
+let layer3Element;
+let layer2Element;
+let layer1Element;
+let layer0Element;
 
+
+const Parallax = props => {
     //test
     let scrollYPos = window.scrollY;
 
@@ -23,7 +29,17 @@ const Parallax = props => {
 
     useEffect(() => {
         InitCoinMarketCap();
-        scollDownElement = document.querySelector('.scroll-down span')
+        scollDownElement = document.querySelector('.scroll-down span');
+
+
+        floorElement = document.querySelector('.floor');
+        layer4Element = document.querySelector('.layer:nth-of-type(2)');
+        layer3Element = document.querySelector('.layer:nth-of-type(3)');
+        layer2Element = document.querySelector('.layer:nth-of-type(4)');
+        layer1Element = document.querySelector('.layer:nth-of-type(5)');
+        layer0Element = document.querySelector('.layer:nth-of-type(6)');
+
+
     }, [])
 
     window.setInterval(() => {
@@ -91,14 +107,6 @@ const Parallax = props => {
             play
         }
     }
-
-    const floorElement = document.querySelector('.floor');
-    const layer4Element = document.querySelector('.layer:nth-of-type(2)');
-    const layer3Element = document.querySelector('.layer:nth-of-type(3)');
-    const layer2Element = document.querySelector('.layer:nth-of-type(4)');
-    const layer1Element = document.querySelector('.layer:nth-of-type(5)');
-    const layer0Element = document.querySelector('.layer:nth-of-type(6)');
-
 
     const animation = parallaxElements([{
         element: floorElement,
