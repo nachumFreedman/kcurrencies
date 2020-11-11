@@ -133,7 +133,9 @@ const Parallax = props => {
         calScale: () => createScaleY(0, 0, -900, 914)
     }]);
 
-    animation.play();
+    useEffect(() => {
+        animation.play();
+    }, [])
 
 
 
