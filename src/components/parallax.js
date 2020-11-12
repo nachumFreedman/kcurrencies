@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React, { useEffect } from 'react';
 import window from 'global';
 import document from 'global/document';
+import 'raf/polyfill';
 
 import { InitCoinMarketCap } from "../network/coinMarketCap";
 
@@ -83,7 +84,7 @@ const Parallax = props => {
                 item.calculateElementStyle();
                 item.animateElement();
             });
-            window.requestAnimationFrame(play);
+            requestAnimationFrame(play);
         }
 
         return {
@@ -108,31 +109,33 @@ const Parallax = props => {
     }
 
 
-    const animation = parallaxElements([{
-        element: floorElement,
-        setStyle: value => `translate3d(0px, 0px, 0px) scaleY(${value})`,
-        calScale: () => createScaleY(1, 0, -1, 914)
-    }, {
-        element: layer4Element,
-        setStyle: value => `translate3d(-50%, ${value}px, 0px)`,
-        calScale: () => createScaleY(0, 0, 410, 914)
-    }, {
-        element: layer3Element,
-        setStyle: value => `translate3d(-50%, ${value}px, 0px)`,
-        calScale: () => createScaleY(0, 0, 165, 914)
-    }, {
-        element: layer2Element,
-        setStyle: value => `translate3d(-50%, ${value}px, 0px)`,
-        calScale: () => createScaleY(0, 0, -130, 914)
-    }, {
-        element: layer1Element,
-        setStyle: value => `translate3d(-50%, ${value}px, 0px)`,
-        calScale: () => createScaleY(0, 0, -475, 914)
-    }, {
-        element: layer0Element,
-        setStyle: value => `translate3d(-50%, ${value}px, 0px)`,
-        calScale: () => createScaleY(0, 0, -900, 914)
-    }]);
+    const animation = parallaxElements([
+        {
+            element: floorElement,
+            setStyle: value => `translate3d(0px, 0px, 0px) scaleY(${value})`,
+            calScale: () => createScaleY(1, 0, -1, 914)
+        }, {
+            element: layer4Element,
+            setStyle: value => `translate3d(-50%, ${value}px, 0px)`,
+            calScale: () => createScaleY(0, 0, 410, 914)
+        }, {
+            element: layer3Element,
+            setStyle: value => `translate3d(-50%, ${value}px, 0px)`,
+            calScale: () => createScaleY(0, 0, 165, 914)
+        }, {
+            element: layer2Element,
+            setStyle: value => `translate3d(-50%, ${value}px, 0px)`,
+            calScale: () => createScaleY(0, 0, -130, 914)
+        }, {
+            element: layer1Element,
+            setStyle: value => `translate3d(-50%, ${value}px, 0px)`,
+            calScale: () => createScaleY(0, 0, -475, 914)
+        }, {
+            element: layer0Element,
+            setStyle: value => `translate3d(-50%, ${value}px, 0px)`,
+            calScale: () => createScaleY(0, 0, -900, 914)
+        }
+    ]);
 
     animation.play();
 
