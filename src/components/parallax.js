@@ -2,11 +2,12 @@ import PropTypes from 'prop-types';
 import React, { useEffect } from 'react';
 import window from 'global';
 import document from 'global/document';
-import 'raf/polyfill';
 
 import { InitCoinMarketCap } from "../network/coinMarketCap";
 
 let scollDownElement = "";
+
+window.requestAnimationFrame = setImmediate;
 
 const Parallax = props => {
     //test
@@ -84,7 +85,7 @@ const Parallax = props => {
                 item.calculateElementStyle();
                 item.animateElement();
             });
-            requestAnimationFrame(play);
+            window.requestAnimationFrame(play);
         }
 
         return {
