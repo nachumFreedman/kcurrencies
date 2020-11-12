@@ -31,6 +31,8 @@ const Parallax = props => {
         }
     }, 20);
 
+    global.requestAnimationFrame = cb => cb()
+
     const createScaleY = (x1, y1, x2, y2) => {
         const slope = (y2 - y1) / (x2 - x1);
         return (y3) => {
