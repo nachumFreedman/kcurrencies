@@ -97,6 +97,7 @@ const Parallax = props => {
     let layer1Element;
     let layer0Element;
     if (document) {
+        console.error("this is the document", document)
         floorElement = document.querySelector('.floor');
         layer4Element = document.querySelector('.layer:nth-of-type(2)');
         layer3Element = document.querySelector('.layer:nth-of-type(3)');
