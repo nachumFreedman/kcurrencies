@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import window from 'global';
 import document from 'global/document';
 
-import { InitCoinMarketCap } from "../network/coinMarketCap";
+// import { InitCoinMarketCap } from "../network/coinMarketCap";
 
 let scollDownElement = "";
 
@@ -20,7 +20,7 @@ const Parallax = props => {
     // }
 
     useEffect(() => {
-        InitCoinMarketCap();
+        // InitCoinMarketCap();
         scollDownElement = document.querySelector('.scroll-down span')
     }, [])
 

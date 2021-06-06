@@ -1,14 +1,12 @@
 {
-  "name": "gatsby-starter-dimension-v2",
-  "description": "Gatsby Starter - Dimension V2",
+  "name": "kcurrencies",
+  "description": "kcurrencies",
   "version": "1.0.0",
   "author": "Hunter Chang",
   "dependencies": {
     "coinmarketcap-api": "^3.1.1",
     "emailjs-com": "^2.6.3",
-    "firebase": "^7.23.0",
     "gatsby": "^2.19.5",
-    "gatsby-plugin-firebase": "^0.2.0-beta.4",
     "gatsby-plugin-flow": "^1.3.13",
     "gatsby-plugin-manifest": "^2.4.34",
     "gatsby-plugin-react-helmet": "^3.1.21",

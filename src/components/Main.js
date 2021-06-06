@@ -6,7 +6,7 @@ import pic03 from '../images/pic03.jpg'
 
 import emailjs from 'emailjs-com';
 
-import { InitCoinMarketCap } from "../network/coinMarketCap";
+// import { InitCoinMarketCap } from "../network/coinMarketCap";
 
 
 
@@ -16,7 +16,7 @@ const Main = props => {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    InitCoinMarketCap();
+    // InitCoinMarketCap();
   })
 
   const handleSubmit = (e) => {
