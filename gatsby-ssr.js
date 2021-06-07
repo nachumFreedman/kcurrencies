@@ -13,6 +13,7 @@ exports.onRenderBody = ({ setBodyAttributes }, pluginOptions) => {
     className: "my-body-class",
   })
 }
+
 // Wraps every page in a component
 exports.wrapPageElement = ({ element, props }) => {
   return typeof window !== 'undefined'
