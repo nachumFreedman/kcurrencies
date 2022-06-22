@@ -24,6 +24,9 @@ const Parallax = props => {
     // InitCoinMarketCap();
     scollDownElement = document.querySelector('.scroll-down span')
   }, [])
+  if (window.screen.width >= 1280) {
+    return <></>
+  } else console.log(window.screen.width)
 
   window.setInterval(() => {
     scrollYPos = window.scrollY
