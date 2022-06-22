@@ -1,6 +1,7 @@
 {
   "projects": {
-    "hosting": "koshercurrencies-1"
+    "hosting": "koshercurrencies-1",
+    "deploy": "koshercurrencies-1"
   },
   "targets": {}
 }
