@@ -141,19 +141,25 @@ const Parallax = props => {
 
   animation.play()
 
+  console.log({ isMobile })
+
   //end test
-  return (
-    <>
-      <div className="container" hidden={isMobile}>
-        <div className="parallax floor"></div>
-        <div className="parallax layer"></div>
-        <div className="parallax layer"></div>
-        <div className="parallax layer"></div>
-        <div className="parallax layer"></div>
-        <div className="parallax layer"></div>
-      </div>
-    </>
-  )
+  if (window.screen.width >= 1280) {
+    return (
+      <>
+        <div className="container" hidden={isMobile}>
+          <div className="parallax floor"></div>
+          <div className="parallax layer"></div>
+          <div className="parallax layer"></div>
+          <div className="parallax layer"></div>
+          <div className="parallax layer"></div>
+          <div className="parallax layer"></div>
+        </div>
+      </>
+    )
+  } else {
+    return <></>
+  }
 }
 
 Parallax.propTypes = {
