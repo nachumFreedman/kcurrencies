@@ -1,22 +1,29 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import logo from "../images/kcurrencieslogo.png"
+import logo from '../images/jlmhub.png'
 
 const Header = props => (
   <>
-    <img src={logo} alt="logo" style={{
-      width: "300px", height: "auto", position: "absolute", left: 20, boxShadow: ".1px .1px .3px .3px darkslategrey"
-    }} />
     <header id="header" style={props.timeout ? { display: 'none' } : {}}>
       <div className="logo">
-        K.
-    </div>
+        <img
+          src={logo}
+          alt="logo"
+          style={{
+            width: '100%',
+            height: 'auto',
+            position: 'absolute',
+            left: 0,
+            boxShadow: '.1px .1px .3px .3px darkslategrey',
+            borderRadius: 10,
+          }}
+        />
+      </div>
       <div className="content">
         <div className="inner">
-          <p>
-            Realize your potential.
-            The best way to keep your currencies kosher.<br /> Decentralized finance at your fingertips.
-        </p>
+          <h3>Come develop the Hi-Tech skills you need for your next career</h3>{' '}
+          <br />
+          Learn code, become a developer and get a job
         </div>
       </div>
       <nav>
@@ -24,11 +31,20 @@ const Header = props => (
           <li>
             <button
               onClick={() => {
-                props.onOpenArticle('intro')
+                props.onOpenArticle('course')
               }}
             >
-              Intro
-          </button>
+              Course
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={() => {
+                props.onOpenArticle('testimonials')
+              }}
+            >
+              Reviews
+            </button>
           </li>
           <li>
             <button
@@ -36,8 +52,8 @@ const Header = props => (
                 props.onOpenArticle('about')
               }}
             >
-              About
-          </button>
+              Mission
+            </button>
           </li>
           <li>
             <button
@@ -46,7 +62,7 @@ const Header = props => (
               }}
             >
               Contact
-          </button>
+            </button>
           </li>
         </ul>
       </nav>

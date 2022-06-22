@@ -34,10 +34,13 @@
 
 		&:hover {
 			background-color: _palette(border-bg);
+			color: white !important;
 		}
 
 		&:active {
 			background-color: _palette(border-bg-alt);
+			color: white !important;
+
 		}
 
 		&.icon {

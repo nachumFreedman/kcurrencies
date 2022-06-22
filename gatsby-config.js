@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: 'KCurrencies',
+    title: 'JLM HUB',
     author: 'Nachum Freedman',
-    description: 'Kosher Currencies',
+    description: 'Jerusalem Hi-Tech courses',
   },
   plugins: [
     'gatsby-plugin-react-helmet',

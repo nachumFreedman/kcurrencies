@@ -19,20 +19,20 @@
     )
   );
   background-image: -moz-radial-gradient(
-    rgba(0, 0, 0, 0.25) 25%,
-    rgba(0, 0, 0, 0) 55%
+    rgba(255, 255, 255, 1) 55%,
+    rgba(255, 255, 255, 1) 55%
   );
   background-image: -webkit-radial-gradient(
-    rgba(0, 0, 0, 0.25) 25%,
-    rgba(0, 0, 0, 0) 55%
+    rgba(255, 255, 255, 1) 55%,
+    rgba(255, 255, 255, 1) 55%,
   );
   background-image: -ms-radial-gradient(
-    rgba(0, 0, 0, 0.25) 25%,
-    rgba(0, 0, 0, 0) 55%
+    rgba(255, 255, 255, 1) 55%,
+    rgba(255, 255, 255, 1) 55%,
   );
   background-image: radial-gradient(
-    rgba(0, 0, 0, 0.25) 25%,
-    rgba(0, 0, 0, 0) 55%
+    rgba(255, 255, 255, 1) 55%,
+    rgba(255, 255, 255, 1) 55%,
   );
   max-width: 100%;
   text-align: center;
@@ -65,12 +65,9 @@
   .logo {
     width: 8rem;
     height: 8rem;
-    line-height: 6.5rem;
-    border: solid _size(border-width) _palette(border);
     border-radius: 100%;
     font-size: 8rem;
     font-family: 'Acceleration & Reaction';
-    padding-right: 3%;
 
     .icon {
 
@@ -217,7 +214,7 @@
 
       &:before {
         top: calc(-2rem - 1px);
-        height: calc(2rem + 1px);
+        height: calc(0rem);
       }
     }
 
