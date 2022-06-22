@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
 import window from 'global'
 import document from 'global/document'
+import { isMobile } from 'react-device-detect'
 
 // import { InitCoinMarketCap } from "../network/coinMarketCap";
 
@@ -143,7 +144,7 @@ const Parallax = props => {
   //end test
   return (
     <>
-      <div className="container">
+      <div className="container" hidden={isMobile}>
         <div className="parallax floor"></div>
         <div className="parallax layer"></div>
         <div className="parallax layer"></div>
