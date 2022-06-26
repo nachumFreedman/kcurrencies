@@ -1,14 +1,36 @@
 import PropTypes from 'prop-types'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import window from 'global'
 import document from 'global/document'
-import { isMobile } from 'react-device-detect'
 
 // import { InitCoinMarketCap } from "../network/coinMarketCap";
 
 let scollDownElement = ''
 
 const Parallax = props => {
+  const [width, setWidth] = useState(window.innerWidth)
+
+  useEffect(() => {
+    // InitCoinMarketCap();
+    scollDownElement = document.querySelector('.scroll-down span')
+    console.log('what', scollDownElement)
+  }, [])
+
+  function handleWindowSizeChange() {
+    setWidth(window.innerWidth)
+    console.log('whit', window.innerWidth)
+  }
+
+  useEffect(() => {
+    window.addEventListener('resize', handleWindowSizeChange)
+    return () => {
+      window.removeEventListener('resize', handleWindowSizeChange)
+      console.log('wet')
+    }
+  }, [])
+
+  const isMobile = width <= 768
+  console.log('thit', isMobile)
   //test
   let scrollYPos = window.pageYOffset
 
@@ -20,13 +42,12 @@ const Parallax = props => {
   //     }
   // }
 
-  useEffect(() => {
-    // InitCoinMarketCap();
-    scollDownElement = document.querySelector('.scroll-down span')
-  }, [])
-  if (window.screen.width >= 1280) {
+  if (isMobile) {
+    console.log({ isMobile })
     return <></>
-  } else console.log(window.screen.width)
+  } else {
+    console.log({ isMobile })
+  }
 
   window.setInterval(() => {
     scrollYPos = window.scrollY
@@ -144,25 +165,19 @@ const Parallax = props => {
 
   animation.play()
 
-  console.log({ isMobile })
-
   //end test
-  if (window.screen.width >= 1280) {
-    return (
-      <>
-        <div className="container" hidden={isMobile}>
-          <div className="parallax floor"></div>
-          <div className="parallax layer"></div>
-          <div className="parallax layer"></div>
-          <div className="parallax layer"></div>
-          <div className="parallax layer"></div>
-          <div className="parallax layer"></div>
-        </div>
-      </>
-    )
-  } else {
-    return <></>
-  }
+  return (
+    <>
+      <div className="container">
+        <div className="parallax floor"></div>
+        {/* <div className="parallax layer"></div> */}
+        {/* <div className="parallax layer"></div> */}
+        <div className="parallax layer"></div>
+        <div className="parallax layer"></div>
+        <div className="parallax layer"></div>
+      </div>
+    </>
+  )
 }
 
 Parallax.propTypes = {

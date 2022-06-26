@@ -23,7 +23,7 @@ const Header = props => (
         <div className="inner">
           <h3>Come develop the Hi-Tech skills you need for your next career</h3>{' '}
           <br />
-          Learn code, become a developer and get a job
+          <h1>Learn code, become a developer, and get a job!</h1>
         </div>
       </div>
       <nav>

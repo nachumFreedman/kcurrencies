@@ -35,6 +35,9 @@ const Main = props => {
       .then(() => {
         props.onCloseArticle()
       })
+      .catch(error => {
+        console.error({ error })
+      })
   }
 
   let close = (
@@ -59,26 +62,21 @@ const Main = props => {
         style={{ display: 'none' }}
       >
         <h2 className="major">Course</h2>
-        <h2>
-          The best way to get into tech is to dive in We believe in practical
-          education
-        </h2>
+        <h2>The best way to get into tech is to dive in</h2>
         <span className="image main">
           <img src={pic02} alt="" />
         </span>
-
-        <h2> Course description</h2>
         <div style={{ flexDirection: 'row', width: '100%' }}>
           <h4>
             Our in-person & online classes in full-stack software development,
             allow you to progress in hi-tech using JLM Hub's Co-Create Method.
           </h4>
-          The Co-Create method means you don't just learn how to but you also do
-          it. We believe in practical education which means you don't just learn
-          theory you build a startup concept, using this method we guarantee the
-          best opportunities for all our students.
-          <br />
-          <br />
+          <h4>
+            The Co-Create method means you don't just learn how to but you also
+            do it. We believe in practical education which means you don't just
+            learn theory you build a startup concept, using this method we
+            guarantee the best opportunities for all our students.
+          </h4>
           <h3>Subject Outline - Full-Stack</h3>
           <h5>- Back-End and Front-End</h5>
           <h5>- Web Development</h5>
@@ -95,17 +93,19 @@ const Main = props => {
             - Four Resume Days Working on your resume with this course
             guarantees you a head start in the industry.
           </h5>{' '}
-          <h4>
+          <h3>
             Together we'll build your resume and portfolio to kickstart your
             Hi-Tech career.
-          </h4>
+          </h3>
           <h6>
             Price: 9000 nis (Subsidized price is for Olim. Regular price 15,000
             nis)* *Ask about other available subsidies.
           </h6>
+          <h2>We believe in practical education.</h2>
         </div>
         {close}
       </article>
+
       <article
         id="testimonials"
         className={`${props.article === 'testimonials' ? 'active' : ''} ${
@@ -194,7 +194,7 @@ const Main = props => {
           <img src={pic03} alt="" />
         </span>
         <h4>JLM Hub is a Jerusalem Bootcamp built for you to master Hi-Tech</h4>
-        <p>
+        <h4>
           We primarily caters to young professionals, entry-level students,
           intermediate-level students, and senior students. The JLM Hub is the
           first of many similar training hubs to be established based on the
@@ -211,7 +211,7 @@ const Main = props => {
           software programming is taught, learned, and developed ​ Theory
           adapted to aid skill Skills enhanced to develop a personal project
           personal projects tailored to produce companies
-        </p>
+        </h4>
         <h4>
           So come join one of our courses, and together let's move Jerusalem
           Hi-Tech forward!
