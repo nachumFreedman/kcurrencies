@@ -4,7 +4,17 @@ import logo from '../images/jlmhub.png'
 
 const Header = props => (
   <>
-    <header id="header" style={props.timeout ? { display: 'none' } : {}}>
+    <header
+      id="header"
+      style={
+        props.timeout
+          ? {
+              display: 'none',
+              backgroundColor: 'white',
+            }
+          : {}
+      }
+    >
       <div className="logo">
         <img
           src={logo}
