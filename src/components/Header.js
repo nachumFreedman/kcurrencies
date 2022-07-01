@@ -31,7 +31,7 @@ const Header = props => (
       </div>
       <div className="content">
         <div className="inner">
-          <h3>Come develop the Hi-Tech skills you need for your next career</h3>{' '}
+          <h3>Develop the Hi-Tech skills you need for your next career</h3>{' '}
           <br />
           <h1>Learn code, become a developer, and get a job!</h1>
         </div>

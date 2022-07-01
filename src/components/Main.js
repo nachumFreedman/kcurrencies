@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React, { useState, useEffect } from 'react'
 import pic01 from '../images/course.jpg'
 import pic02 from '../images/nachumboard.jpg'
-import pic03 from '../images/ilovejlmhub.jpg'
+import pic03 from '../images/ilovejlmub.png'
 
 import emailjs from 'emailjs-com'
 
